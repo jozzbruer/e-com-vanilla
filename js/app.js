@@ -23,13 +23,11 @@ let cart = []
 
 document.addEventListener('DOMContentLoaded', () => {
     products.getProducts().then(products => {
-        ui.displayProduct(products, productsDOM)
-        Storage.saveProducts(products)
-    })
-    // .then(() => {
-
-
-    //     // console.log(buttons)
-    //     ui.getBagButtons()
-    // })
+            ui.displayProduct(products, productsDOM)
+            Storage.saveProducts(products)
+        })
+        .then(() => {
+            const buttons = [...document.querySelectorAll('.bag-btn')]
+            ui.getBagButtons(buttons, cart)
+        })
 })

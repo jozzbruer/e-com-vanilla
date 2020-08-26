@@ -26,10 +26,21 @@ class UI {
 
     }
 
-    // getBagButtons() {
-    //     const buttons = [...document.querySelectorAll('.bag-button')]
-    //     console.log(buttons)
-    // }
+    getBagButtons(buttons, cart) {
+        buttons.forEach(button => {
+            let id = button.dataset.id
+            let inCart = cart.find(item => item.id === id)
+            if (inCart) {
+                button.innerText = 'In Cart'
+                button.disabled = true
+            } else {
+                button.addEventListener('click', (e) => {
+                    e.target.innerText = 'In Cart';
+                    e.target.disabled = true
+                })
+            }
+        });
+    }
 }
 const ui = new UI()
 
