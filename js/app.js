@@ -10,7 +10,7 @@ const cartBtn = document.querySelector('.cart-btn')
 const closeCartBtn = document.querySelector('.close-cart')
 const clearCartBtn = document.querySelector('.clear-cart')
 const cartDOM = document.querySelector('.cart')
-const cartOverley = document.querySelector('.cart-overlay')
+const cartOverlay = document.querySelector('.cart-overlay')
 const cartItems = document.querySelector('.cart-items')
 const cartTotal = document.querySelector('.cart-total')
 const cartContent = document.querySelector('.cart-content')
@@ -18,7 +18,9 @@ const productsDOM = document.querySelector('.products-center')
 
 // Cart
 let cart = []
+// Buttons
 
+let buttonsDOM = []
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(() => {
             const buttons = [...document.querySelectorAll('.bag-btn')]
-            ui.getBagButtons(buttons, cart)
+            ui.getBagButtons(buttons, cart, buttonsDOM, cartTotal, cartItems, cartContent, cartOverlay, cartDOM)
         })
 })
