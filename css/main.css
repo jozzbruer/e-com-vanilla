@@ -200,6 +200,10 @@ body {
   visibility: hidden;
 }
 
+footer {
+  text-align: center;
+}
+
 .cart {
   position: fixed;
   top: 0;
